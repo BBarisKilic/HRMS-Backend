@@ -6,15 +6,15 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "JobTitles")
+@Table(name = "job_titles")
 public class JobTitle {
 
     @Id
     @GeneratedValue
-    @Column(name = "Id")
+    @Column(name = "id")
     private int id;
 
-    @Column(name = "JobTitle")
+    @Column(name = "job_title")
     private String jobTitle;
 
 }
