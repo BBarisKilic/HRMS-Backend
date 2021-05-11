@@ -3,105 +3,105 @@
 BEGIN;
 
 
-CREATE TABLE public."ActivationByEmail"
+CREATE TABLE public.activation_by_email
 (
-    "UserId" integer NOT NULL,
-    "ActivationCode" character varying(60) NOT NULL,
-    "Confirmed" boolean NOT NULL,
-    PRIMARY KEY ("UserId")
+    user_id integer NOT NULL,
+    activation_code character varying(60) NOT NULL,
+    confirmed boolean NOT NULL,
+    PRIMARY KEY (user_id)
 );
 
-CREATE TABLE public."ActivationByStaff"
+CREATE TABLE public.activation_by_staff
 (
-    "UserId" integer NOT NULL,
-    "StaffId" integer NOT NULL,
-    "Confirmed" boolean NOT NULL,
-    PRIMARY KEY ("UserId")
+    user_id integer NOT NULL,
+    staff_id integer NOT NULL,
+    confirmed boolean NOT NULL,
+    PRIMARY KEY (user_id)
 );
 
-CREATE TABLE public."Candidates"
+CREATE TABLE public.candidates
 (
-    "UserId" integer NOT NULL,
-    "FistName" character varying(50) NOT NULL,
-    "LastName" character varying(50) NOT NULL,
-    "NationalId" character varying(11) NOT NULL,
-    "YearOfBirth" date NOT NULL,
-    PRIMARY KEY ("UserId")
+    user_id integer NOT NULL,
+    fist_name character varying(50) NOT NULL,
+    last_name character varying(50) NOT NULL,
+    national_id character varying(11) NOT NULL,
+    year_of_birth date NOT NULL,
+    PRIMARY KEY (user_id)
 );
 
-CREATE TABLE public."Employers"
+CREATE TABLE public.employers
 (
-    "UserId" integer NOT NULL,
-    "CompanyName" character varying(50) NOT NULL,
-    "Website" character varying(50) NOT NULL,
-    "Phone" character varying(14) NOT NULL,
-    PRIMARY KEY ("UserId")
+    user_id integer NOT NULL,
+    company_name character varying(50) NOT NULL,
+    website character varying(50) NOT NULL,
+    phone character varying(14) NOT NULL,
+    PRIMARY KEY (user_id)
 );
 
-CREATE TABLE public."JobTitles"
+CREATE TABLE public.job_titles
 (
-    "Id" integer NOT NULL,
-    "JobTitle" character varying(50) NOT NULL,
-    PRIMARY KEY ("Id")
+    id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 0 MINVALUE 0 MAXVALUE 2147483647 CACHE 1 ),
+    job_title character varying(50) NOT NULL,
+    PRIMARY KEY (id)
 );
 
-CREATE TABLE public."Staffs"
+CREATE TABLE public.staffs
 (
-    "UserId" integer NOT NULL,
-    "FirstName" character varying(50) NOT NULL,
-    "LastName" character varying(50) NOT NULL,
-    "NationalId" character varying(11) NOT NULL,
-    "YearOfBirth" date NOT NULL,
-    PRIMARY KEY ("UserId")
+    user_id integer NOT NULL,
+    first_name character varying(50) NOT NULL,
+    last_name character varying(50) NOT NULL,
+    national_id character varying(11) NOT NULL,
+    year_of_birth date NOT NULL,
+    PRIMARY KEY (user_id)
 );
 
-CREATE TABLE public."Users"
+CREATE TABLE public.users
 (
-    "Id" integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 0 MINVALUE 0 MAXVALUE 2147483647 CACHE 1 ),
-    "Email" character varying(50) NOT NULL,
-    "Password" character varying(20) NOT NULL,
-    PRIMARY KEY ("Id")
+    id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 0 MINVALUE 0 MAXVALUE 2147483647 CACHE 1 ),
+    email character varying(50) NOT NULL,
+    password character varying(20) NOT NULL,
+    PRIMARY KEY (id)
 );
 
-ALTER TABLE public."ActivationByEmail"
-    ADD FOREIGN KEY ("UserId")
-    REFERENCES public."Candidates" ("UserId")
+ALTER TABLE public.activation_by_email
+    ADD FOREIGN KEY (user_id)
+    REFERENCES public.candidates (user_id)
     NOT VALID;
 
 
-ALTER TABLE public."ActivationByEmail"
-    ADD FOREIGN KEY ("UserId")
-    REFERENCES public."Employers" ("UserId")
+ALTER TABLE public.activation_by_email
+    ADD FOREIGN KEY (user_id)
+    REFERENCES public.employers (user_id)
     NOT VALID;
 
 
-ALTER TABLE public."ActivationByStaff"
-    ADD FOREIGN KEY ("StaffId")
-    REFERENCES public."Staffs" ("UserId")
+ALTER TABLE public.activation_by_staff
+    ADD FOREIGN KEY (staff_id)
+    REFERENCES public.staffs (user_id)
     NOT VALID;
 
 
-ALTER TABLE public."ActivationByStaff"
-    ADD FOREIGN KEY ("UserId")
-    REFERENCES public."Employers" ("UserId")
+ALTER TABLE public.activation_by_staff
+    ADD FOREIGN KEY (user_id)
+    REFERENCES public.employers (user_id)
     NOT VALID;
 
 
-ALTER TABLE public."Candidates"
-    ADD FOREIGN KEY ("UserId")
-    REFERENCES public."Users" ("Id")
+ALTER TABLE public.candidates
+    ADD FOREIGN KEY (user_id)
+    REFERENCES public.users (id)
     NOT VALID;
 
 
-ALTER TABLE public."Employers"
-    ADD FOREIGN KEY ("UserId")
-    REFERENCES public."Users" ("Id")
+ALTER TABLE public.employers
+    ADD FOREIGN KEY (user_id)
+    REFERENCES public.users (id)
     NOT VALID;
 
 
-ALTER TABLE public."Staffs"
-    ADD FOREIGN KEY ("UserId")
-    REFERENCES public."Users" ("Id")
+ALTER TABLE public.staffs
+    ADD FOREIGN KEY (user_id)
+    REFERENCES public.users (id)
     NOT VALID;
 
 END;
