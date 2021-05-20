@@ -22,7 +22,7 @@ CREATE TABLE public.activation_by_staff
 CREATE TABLE public.candidates
 (
     user_id integer NOT NULL,
-    fist_name character varying(50) NOT NULL,
+    first_name character varying(50) NOT NULL,
     last_name character varying(50) NOT NULL,
     national_id character varying(11) NOT NULL,
     year_of_birth date NOT NULL,
