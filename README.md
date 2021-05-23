@@ -18,12 +18,12 @@ See database:
 ## 1. Progress
 
 | **Status** | **Task** |
-| -------------: | :------------- |
-| :ballot_box_with_check: Completed | Create an appropriate database. |
-| :ballot_box_with_check: Completed | Create a project using Spring Boot. |
-| :ballot_box_with_check: Completed | Create layers based on N-Layered Design Pattern. |
-| :ballot_box_with_check: Completed | Create an API that can list the titles of the job positions on the system. |
-| :ballot_box_with_check: Completed | Add Swagger support to the system. |
+| ------------- | :------------- |
+| :ballot_box_with_check: &nbsp; Completed | Create an appropriate database. |
+| :ballot_box_with_check: &nbsp; Completed | Create a project using Spring Boot. |
+| :ballot_box_with_check: &nbsp; Completed | Create layers based on N-Layered Design Pattern. |
+| :ballot_box_with_check: &nbsp; Completed | Create an API that can list the titles of the job positions on the system. |
+| :ballot_box_with_check: &nbsp; Completed | Add Swagger support to the system. |
 
 ## 2. Swagger UI
 

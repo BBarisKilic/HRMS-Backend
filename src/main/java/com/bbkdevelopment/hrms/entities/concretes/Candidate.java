@@ -26,10 +26,6 @@ public class Candidate extends User {
 
     public Candidate(int id, String email, String password, String firstName, String lastName, String nationalId, Date yearOfBirth) {
         super(id, email, password);
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.nationalId = nationalId;
-        this.yearOfBirth = yearOfBirth;
+
     }
 }

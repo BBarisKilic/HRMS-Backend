@@ -8,7 +8,7 @@ CREATE TABLE public.candidates
     id integer NOT NULL,
     first_name character varying(35) NOT NULL,
     last_name character varying(35) NOT NULL,
-    identity_number character varying(11) NOT NULL,
+    national_id character varying(11) NOT NULL,
     birth_year integer NOT NULL,
     PRIMARY KEY (id)
 );
