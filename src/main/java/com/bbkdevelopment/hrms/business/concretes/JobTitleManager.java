@@ -21,6 +21,6 @@ public class JobTitleManager implements JobTitleService {
 
     @Override
     public DataResult<List<JobTitle>> getAll() {
-        return new SuccessDataResult(jobTitleDao.findAll(), "Data successfully fetched.");
+        return new SuccessDataResult(jobTitleDao.findAll(), "Job titles successfully fetched.");
     }
 }

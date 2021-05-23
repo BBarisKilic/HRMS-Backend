@@ -1,8 +1,8 @@
 package com.bbkdevelopment.hrms.api.controllers;
 
-import com.bbkdevelopment.hrms.business.abstracts.JobTitleService;
+import com.bbkdevelopment.hrms.business.abstracts.CandidateService;
 import com.bbkdevelopment.hrms.core.utilities.results.DataResult;
-import com.bbkdevelopment.hrms.entities.concretes.JobTitle;
+import com.bbkdevelopment.hrms.entities.concretes.Candidate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,18 +11,17 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/job-titles")
-public class JobTitlesControllers {
-    private JobTitleService jobTitleService;
+@RequestMapping("/api/candidates")
+public class CandidatesControllers {
+    private CandidateService candidateService;
 
     @Autowired
-    public JobTitlesControllers(JobTitleService jobTitleService) {
-        this.jobTitleService = jobTitleService;
+    public CandidatesControllers(CandidateService candidateService) {
+        this.candidateService = candidateService;
     }
 
     @GetMapping("/get-all")
-    public DataResult<List<JobTitle>> getAll(){
-        return jobTitleService.getAll();
+    public DataResult<List<Candidate>> getAll() {
+        return candidateService.getAll();
     }
-
 }
