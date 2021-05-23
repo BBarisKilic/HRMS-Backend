@@ -12,4 +12,19 @@ See other parts of the HRMS:
 - [HRMS-Frontend-React](https://github.com/BBarisKilic/HRMS-Frontend-React)
 - [HRMS-Frontend-Flutter](https://github.com/BBarisKilic/HRMS-Frontend-Flutter)
 
+See database:
+- [HRMS-Database-PostgreSQL](database)
 
+## 1. Progress
+
+| **Status** | **Task** |
+| -------------: | :------------- |
+| <input type="checkbox" disabled checked /> Completed | Create an appropriate database. |
+| <input type="checkbox" disabled checked /> Completed | Create a project using Spring Boot. |
+| <input type="checkbox" disabled checked /> Completed | Create layers based on N-Layered Design Pattern. |
+| <input type="checkbox" disabled checked /> Completed | Create an API that can list the titles of the job positions on the system. |
+| <input type="checkbox" disabled checked /> Completed | Add Swagger support to the system. |
+
+## 2. Swagger UI
+
+Screenshot will be added soon...
