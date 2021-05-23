@@ -19,11 +19,11 @@ See database:
 
 | **Status** | **Task** |
 | -------------: | :------------- |
-| <ul><li>[ ] Blog </li></ul> | Create an appropriate database. |
-| :ballot_box_with_check: | Create a project using Spring Boot. |
-| &#9744; | Create layers based on N-Layered Design Pattern. |
-| &#9745; | Create an API that can list the titles of the job positions on the system. |
-| :heavy_check_mark: Completed | Add Swagger support to the system. |
+| :ballot_box_with_check: Completed | Create an appropriate database. |
+| :ballot_box_with_check: Completed | Create a project using Spring Boot. |
+| :ballot_box_with_check: Completed | Create layers based on N-Layered Design Pattern. |
+| :ballot_box_with_check: Completed | Create an API that can list the titles of the job positions on the system. |
+| :ballot_box_with_check: Completed | Add Swagger support to the system. |
 
 ## 2. Swagger UI
 
