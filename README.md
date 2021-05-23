@@ -19,11 +19,11 @@ See database:
 
 | **Status** | **Task** |
 | -------------: | :------------- |
-| <input type="checkbox" disabled checked /> Completed | Create an appropriate database. |
-| <input type="checkbox" disabled checked /> Completed | Create a project using Spring Boot. |
-| <input type="checkbox" disabled checked /> Completed | Create layers based on N-Layered Design Pattern. |
-| <input type="checkbox" disabled checked /> Completed | Create an API that can list the titles of the job positions on the system. |
-| <input type="checkbox" disabled checked /> Completed | Add Swagger support to the system. |
+| <ul><li>[ ] Blog </li></ul> | Create an appropriate database. |
+| :ballot_box_with_check: | Create a project using Spring Boot. |
+| &#9744; | Create layers based on N-Layered Design Pattern. |
+| &#9745; | Create an API that can list the titles of the job positions on the system. |
+| :heavy_check_mark: Completed | Add Swagger support to the system. |
 
 ## 2. Swagger UI
 
