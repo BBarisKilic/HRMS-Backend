@@ -1,6 +1,8 @@
 package com.bbkdevelopment.hrms.business.concretes;
 
 import com.bbkdevelopment.hrms.business.abstracts.JobTitleService;
+import com.bbkdevelopment.hrms.core.utilities.results.DataResult;
+import com.bbkdevelopment.hrms.core.utilities.results.SuccessDataResult;
 import com.bbkdevelopment.hrms.dataAccess.abstracts.JobTitleDao;
 import com.bbkdevelopment.hrms.entities.concretes.JobTitle;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +20,7 @@ public class JobTitleManager implements JobTitleService {
     }
 
     @Override
-    public List<JobTitle> getAll() {
-        return jobTitleDao.findAll();
+    public DataResult<List<JobTitle>> getAll() {
+        return new SuccessDataResult(jobTitleDao.findAll(), "Data successfully fetched.");
     }
 }

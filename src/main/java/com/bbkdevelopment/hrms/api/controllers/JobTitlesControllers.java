@@ -1,6 +1,7 @@
 package com.bbkdevelopment.hrms.api.controllers;
 
 import com.bbkdevelopment.hrms.business.abstracts.JobTitleService;
+import com.bbkdevelopment.hrms.core.utilities.results.DataResult;
 import com.bbkdevelopment.hrms.entities.concretes.JobTitle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +21,7 @@ public class JobTitlesControllers {
     }
 
     @GetMapping("/get-all")
-    public List<JobTitle> getAll(){
+    public DataResult<List<JobTitle>> getAll(){
         return jobTitleService.getAll();
     }
 }
