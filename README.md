@@ -17,13 +17,15 @@ See database:
 
 ## 1. Progress
 
-| **Status** | **Task** |
-| ------------- | :------------- |
-| :ballot_box_with_check: &nbsp; Completed | Create an appropriate database. |
-| :ballot_box_with_check: &nbsp; Completed | Create a project using Spring Boot. |
-| :ballot_box_with_check: &nbsp; Completed | Create layers based on N-Layered Design Pattern. |
-| :ballot_box_with_check: &nbsp; Completed | Create an API that can list the titles of the job positions on the system. |
-| :ballot_box_with_check: &nbsp; Completed | Add Swagger support to the system. |
+| **No** | **Status** | **Task** |
+| :-------------: | ------------- | :------------- |
+| 1 | :ballot_box_with_check: &nbsp; Completed | Create an appropriate database. |
+| 2 | :ballot_box_with_check: &nbsp; Completed | Create a project using Spring Boot. |
+| 3 | :ballot_box_with_check: &nbsp; Completed | Create layers based on N-Layered Design Pattern. |
+| 4 | :ballot_box_with_check: &nbsp; Completed | Create an API controller that can list the titles of the job positions on the system. |
+| 5 | :ballot_box_with_check: &nbsp; Completed | Add Swagger support to the system. |
+| 6 | :ballot_box_with_check: &nbsp; Completed | Create an API controller that can list all candidates on the system. |
+| 7 | :ballot_box_with_check: &nbsp; Completed | Create an API controller that can list all employers on the system. |
 
 ## 2. Swagger UI
 
