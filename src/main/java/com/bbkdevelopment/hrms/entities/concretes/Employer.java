@@ -9,27 +9,23 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name="candidates")
+@Table(name = "employers")
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class Candidate extends User {
+public class Employer extends User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @Column(name = "first_name")
-    private String firstName;
+    @Column(name = "company_name")
+    private String companyName;
 
-    @Column(name = "last_name")
-    private String lastName;
+    @Column(name = "web_address")
+    private String webAddress;
 
-    @Column(name = "national_id")
-    private String nationalId;
-
-    @Column(name = "birth_year")
-    private int birthYear;
-
+    @Column(name = "phone_number")
+    private String phoneNumber;
 }
