@@ -1,14 +1,22 @@
 package com.bbkdevelopment.hrms.entities.concretes;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
+@Data
 @Table(name="candidates")
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 public class Candidate extends User {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
@@ -21,11 +29,7 @@ public class Candidate extends User {
     @Column(name = "national_id")
     private String nationalId;
 
-    @Column(name = "year_of_birth")
-    private Date yearOfBirth;
+    @Column(name = "birth_year")
+    private int birthYear;
 
-    public Candidate(int id, String email, String password, String firstName, String lastName, String nationalId, Date yearOfBirth) {
-        super(id, email, password);
-
-    }
 }
