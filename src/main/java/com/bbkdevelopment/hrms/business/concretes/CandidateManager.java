@@ -1,10 +1,8 @@
 package com.bbkdevelopment.hrms.business.concretes;
 
 import com.bbkdevelopment.hrms.business.abstracts.CandidateService;
-import com.bbkdevelopment.hrms.core.utilities.results.DataResult;
-import com.bbkdevelopment.hrms.core.utilities.results.Result;
-import com.bbkdevelopment.hrms.core.utilities.results.SuccessDataResult;
-import com.bbkdevelopment.hrms.core.utilities.results.SuccessResult;
+import com.bbkdevelopment.hrms.core.utilities.results.*;
+import com.bbkdevelopment.hrms.core.utilities.validations.CandidateValidator;
 import com.bbkdevelopment.hrms.dataAccess.abstracts.CandidateDao;
 import com.bbkdevelopment.hrms.entities.concretes.Candidate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +13,7 @@ import java.util.List;
 @Service
 public class CandidateManager implements CandidateService {
     private CandidateDao candidateDao;
+    private CandidateValidator candidateValidator;
 
     @Autowired
     public CandidateManager(CandidateDao candidateDao) {
@@ -28,6 +27,13 @@ public class CandidateManager implements CandidateService {
 
     @Override
     public Result add(Candidate candidate) {
+        candidateValidator = new CandidateValidator(candidate, candidateDao);
+
+        if(candidateValidator.isEmailUsedBefore())
+            return new ErrorResult(candidate.getEmail() + " used before.");
+        if(candidateValidator.isNationalIdUsedBefore())
+            return new ErrorResult(candidate.getNationalId() + " used before.");
+
         this.candidateDao.save(candidate);
         return new SuccessResult(candidate.getLastName() + "successfully added.");
     }

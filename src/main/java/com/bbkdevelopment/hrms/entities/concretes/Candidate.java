@@ -6,6 +6,8 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
 @Data
 @Entity
@@ -21,12 +23,18 @@ public class Candidate extends User {
     private int id;
 
     @Column(name = "first_name")
+    @NotEmpty
+    @NotBlank(message = "First name can not be empty!")
     private String firstName;
 
     @Column(name = "last_name")
+    @NotEmpty
+    @NotBlank(message = "Last name can not be empty!")
     private String lastName;
 
     @Column(name = "national_id")
+    @NotEmpty
+    @NotBlank(message = "National id can not be empty!")
     private String nationalId;
 
     @Column(name = "birth_year")
