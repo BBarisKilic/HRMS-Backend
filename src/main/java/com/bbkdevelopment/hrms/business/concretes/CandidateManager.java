@@ -35,6 +35,8 @@ public class CandidateManager implements CandidateService {
             return new ErrorResult(candidate.getNationalId() + " used before.");
         if(!candidateValidator.isNationalIdValid())
             return new ErrorResult(candidate.getNationalId() + " is not valid.");
+        if(!candidateValidator.isEmailValidated())
+            return new ErrorResult("Please validate your email: " + candidate.getEmail());
 
         this.candidateDao.save(candidate);
         return new SuccessResult(candidate.getLastName() + " successfully added.");
