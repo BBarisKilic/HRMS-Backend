@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
 @Data
 @Entity
@@ -23,10 +24,12 @@ public class User {
 
     @Column(name = "email")
     @Email(message = "Enter a valid email!")
+    @NotEmpty
     @NotBlank(message = "Email can not be empty!")
     private String email;
 
     @Column(name = "password")
+    @NotEmpty
     @NotBlank(message = "Password can not be empty!")
     private String password;
 }

@@ -33,7 +33,7 @@ public class CandidateManager implements CandidateService {
             return new ErrorResult(candidate.getEmail() + " used before.");
         if(candidateValidator.isNationalIdUsedBefore())
             return new ErrorResult(candidate.getNationalId() + " used before.");
-        if(!candidateValidator.isNationalIdValid())
+        if(candidateValidator.isNationalIdValid())
             return new ErrorResult(candidate.getNationalId() + " is not valid.");
         if(!candidateValidator.isEmailValidated())
             return new ErrorResult("Please validate your email: " + candidate.getEmail());

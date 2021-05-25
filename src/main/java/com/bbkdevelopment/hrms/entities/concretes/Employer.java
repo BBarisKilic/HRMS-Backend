@@ -6,6 +6,8 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
 @Data
 @Entity
@@ -21,11 +23,17 @@ public class Employer extends User {
     private int id;
 
     @Column(name = "company_name")
+    @NotEmpty
+    @NotBlank(message = "Company name can not be empty!")
     private String companyName;
 
     @Column(name = "web_address")
+    @NotEmpty
+    @NotBlank(message = "Web address can not be empty!")
     private String webAddress;
 
     @Column(name = "phone_number")
+    @NotEmpty
+    @NotBlank(message = "Phone number can not be empty!")
     private String phoneNumber;
 }
