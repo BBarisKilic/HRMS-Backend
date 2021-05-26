@@ -2,11 +2,11 @@ package com.bbkdevelopment.hrms.api.controllers;
 
 import com.bbkdevelopment.hrms.business.abstracts.EmployerService;
 import com.bbkdevelopment.hrms.core.utilities.results.DataResult;
+import com.bbkdevelopment.hrms.core.utilities.results.Result;
 import com.bbkdevelopment.hrms.entities.concretes.Employer;
+import com.bbkdevelopment.hrms.entities.concretes.RequestBodyEmployer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +23,10 @@ public class EmployersControllers {
     @GetMapping("get-all")
     public DataResult<List<Employer>> getAll() {
         return this.employerService.getAll();
+    }
+
+    @PostMapping("/add")
+    public Result add(@RequestBody RequestBodyEmployer requestBodyEmployer) {
+        return this.employerService.add(requestBodyEmployer);
     }
 }
