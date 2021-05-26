@@ -1,6 +1,6 @@
 package com.bbkdevelopment.hrms.core.utilities.validators;
 
-import com.bbkdevelopment.hrms.core.adapters.concretes.EmailVerificationAdapter;
+import com.bbkdevelopment.hrms.core.adapters.concretes.EmailVerifierAdapter;
 import com.bbkdevelopment.hrms.core.adapters.concretes.MernisAdapter;
 import com.bbkdevelopment.hrms.dataAccess.abstracts.CandidateDao;
 import com.bbkdevelopment.hrms.dataAccess.abstracts.UserDao;
@@ -30,6 +30,6 @@ public class CandidateValidator extends UserValidator{
     }
 
     public boolean isEmailValidated() {
-        return new EmailVerificationAdapter().isEmailVerified();
+        return new EmailVerifierAdapter().isEmailVerified();
     }
 }
