@@ -1,4 +1,4 @@
-package com.bbkdevelopment.hrms.core.utilities.services.abstracts;
+package com.bbkdevelopment.hrms.core.adapters.abstracts;
 
 public interface EmailVerificationService {
     boolean isEmailVerified();

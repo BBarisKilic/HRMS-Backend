@@ -2,7 +2,7 @@ package com.bbkdevelopment.hrms.business.concretes;
 
 import com.bbkdevelopment.hrms.business.abstracts.EmployerService;
 import com.bbkdevelopment.hrms.core.utilities.results.*;
-import com.bbkdevelopment.hrms.core.utilities.validations.EmployerValidator;
+import com.bbkdevelopment.hrms.core.utilities.validators.EmployerValidator;
 import com.bbkdevelopment.hrms.dataAccess.abstracts.EmployerDao;
 import com.bbkdevelopment.hrms.entities.concretes.Employer;
 import org.springframework.beans.factory.annotation.Autowired;

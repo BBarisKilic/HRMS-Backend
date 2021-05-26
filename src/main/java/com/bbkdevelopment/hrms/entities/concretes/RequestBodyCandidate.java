@@ -10,7 +10,7 @@ import javax.validation.constraints.NotEmpty;
 @Data
 @Entity
 @EqualsAndHashCode(callSuper = true)
-public class RequestedCandidateBody extends Candidate {
+public class RequestBodyCandidate extends Candidate {
     @NotEmpty
     @NotBlank(message = "Second password can not be empty!")
     private String secondPassword;

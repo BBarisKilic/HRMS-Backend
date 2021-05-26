@@ -1,8 +1,8 @@
-package com.bbkdevelopment.hrms.core.utilities.services.concretes;
+package com.bbkdevelopment.hrms.core.adapters.concretes;
 
-import com.bbkdevelopment.hrms.core.utilities.services.abstracts.MernisService;
+import com.bbkdevelopment.hrms.core.adapters.abstracts.MernisService;
 import com.bbkdevelopment.hrms.entities.concretes.Candidate;
-import com.bbkdevelopment.hrms.mernis.HTNKPSPublicSoap;
+import com.bbkdevelopment.hrms.services.mernis.HTNKPSPublicSoap;
 
 public class MernisAdapter implements MernisService {
     @Override

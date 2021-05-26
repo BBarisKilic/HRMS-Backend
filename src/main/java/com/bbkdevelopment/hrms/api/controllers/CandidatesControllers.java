@@ -4,7 +4,7 @@ import com.bbkdevelopment.hrms.business.abstracts.CandidateService;
 import com.bbkdevelopment.hrms.core.utilities.results.DataResult;
 import com.bbkdevelopment.hrms.core.utilities.results.Result;
 import com.bbkdevelopment.hrms.entities.concretes.Candidate;
-import com.bbkdevelopment.hrms.entities.concretes.RequestedCandidateBody;
+import com.bbkdevelopment.hrms.entities.concretes.RequestBodyCandidate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,7 +26,7 @@ public class CandidatesControllers {
     }
 
     @PostMapping("/add")
-    public Result add(@RequestBody RequestedCandidateBody requestedCandidateBody) {
-        return this.candidateService.add(requestedCandidateBody);
+    public Result add(@RequestBody RequestBodyCandidate requestBodyCandidate) {
+        return this.candidateService.add(requestBodyCandidate);
     }
 }

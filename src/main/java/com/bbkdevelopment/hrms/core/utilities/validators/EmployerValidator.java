@@ -1,4 +1,4 @@
-package com.bbkdevelopment.hrms.core.utilities.validations;
+package com.bbkdevelopment.hrms.core.utilities.validators;
 
 import com.bbkdevelopment.hrms.dataAccess.abstracts.EmployerDao;
 import com.bbkdevelopment.hrms.entities.concretes.Employer;

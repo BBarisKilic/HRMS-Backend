@@ -2,7 +2,7 @@ package com.bbkdevelopment.hrms.business.concretes;
 
 import com.bbkdevelopment.hrms.business.abstracts.CandidateService;
 import com.bbkdevelopment.hrms.core.utilities.results.*;
-import com.bbkdevelopment.hrms.core.utilities.validations.CandidateValidator;
+import com.bbkdevelopment.hrms.core.utilities.validators.CandidateValidator;
 import com.bbkdevelopment.hrms.dataAccess.abstracts.CandidateDao;
 import com.bbkdevelopment.hrms.entities.concretes.Candidate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +33,7 @@ public class CandidateManager implements CandidateService {
             return new ErrorResult(candidate.getEmail() + " used before.");
         if(candidateValidator.isNationalIdUsedBefore())
             return new ErrorResult(candidate.getNationalId() + " used before.");
-        if(candidateValidator.isNationalIdValid())
+        if(!candidateValidator.isNationalIdValid())
             return new ErrorResult(candidate.getNationalId() + " is not valid.");
         if(!candidateValidator.isEmailValidated())
             return new ErrorResult("Please validate your email: " + candidate.getEmail());
