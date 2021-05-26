@@ -29,9 +29,13 @@ public class EmployerManager implements EmployerService {
     public Result add(Employer employer) {
         employerValidator = new EmployerValidator(employer, employerDao);
 
+
         if(employerValidator.isEmailUsedBefore())
             return new ErrorResult(employer.getEmail() + " used before.");
-
+        if(!employerValidator.isEmailValidated())
+            return new ErrorResult("Please validate your email: "+ employer.getEmail());
+        if(!employerValidator.isEmployerVerified())
+            return new ErrorResult("Your registration need to be verified by the employee first.");
 
         this.employerDao.save(employer);
         return new SuccessResult(employer.getCompanyName() + " successfully added.");

@@ -1,5 +1,7 @@
 package com.bbkdevelopment.hrms.core.utilities.validators;
 
+import com.bbkdevelopment.hrms.core.adapters.concretes.EmailVerificationAdapter;
+import com.bbkdevelopment.hrms.core.adapters.concretes.EmployerVerifierAdapter;
 import com.bbkdevelopment.hrms.dataAccess.abstracts.EmployerDao;
 import com.bbkdevelopment.hrms.entities.concretes.Employer;
 
@@ -13,4 +15,13 @@ public class EmployerValidator extends UserValidator {
         this.employerDao = employerDao;
     }
 
+
+
+    public boolean isEmailValidated() {
+        return new EmailVerificationAdapter().isEmailVerified();
+    }
+
+    public boolean isEmployerVerified() {
+        return new EmployerVerifierAdapter().isEmployerVerified();
+    }
 }
