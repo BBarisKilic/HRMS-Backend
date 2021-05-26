@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
 @Data
 @Entity
@@ -19,6 +21,8 @@ public class JobTitle {
     private int id;
 
     @Column(name = "title")
+    @NotEmpty
+    @NotBlank(message = "Job title can not be empty!")
     private String jobTitle;
 
 }
