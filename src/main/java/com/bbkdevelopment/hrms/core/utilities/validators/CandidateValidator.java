@@ -17,11 +17,9 @@ public class CandidateValidator extends UserValidator{
     }
 
     public boolean isNationalIdUsedBefore() {
-        for(Candidate candidate : candidateDao.findAll()){
-            if(candidate.getNationalId().equals(this.candidate.getNationalId())) {
+        for(Candidate candidate : candidateDao.findAll())
+            if(candidate.getNationalId().equals(this.candidate.getNationalId()))
                 return true;
-            }
-        }
        return false;
     }
 

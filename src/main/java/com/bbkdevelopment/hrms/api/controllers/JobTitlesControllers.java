@@ -2,11 +2,11 @@ package com.bbkdevelopment.hrms.api.controllers;
 
 import com.bbkdevelopment.hrms.business.abstracts.JobTitleService;
 import com.bbkdevelopment.hrms.core.utilities.results.DataResult;
+import com.bbkdevelopment.hrms.core.utilities.results.Result;
 import com.bbkdevelopment.hrms.entities.concretes.JobTitle;
+import com.bbkdevelopment.hrms.entities.concretes.RequestBodyEmployer;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,4 +25,8 @@ public class JobTitlesControllers {
         return this.jobTitleService.getAll();
     }
 
+    @PostMapping("/add")
+    public Result add(@RequestBody JobTitle jobTitle) {
+        return this.jobTitleService.add(jobTitle);
+    }
 }

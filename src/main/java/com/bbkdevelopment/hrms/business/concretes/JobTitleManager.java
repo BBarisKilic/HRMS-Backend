@@ -27,9 +27,11 @@ public class JobTitleManager implements JobTitleService {
 
     @Override
     public Result add(JobTitle jobTitle) {
-        jobTitleValidator = new JobTitleValidator(jobTitle);
+        jobTitleValidator = new JobTitleValidator(jobTitle, jobTitleDao);
 
         if(jobTitleValidator.isJobTitleEmpty())
+            return new ErrorResult("Job title can not be empty!");
+        if(jobTitleValidator.isJobTitleAddedBefore())
             return new ErrorResult("Job title can not be empty!");
 
         return new SuccessResult(jobTitle.getJobTitle() + " successfully added.");
