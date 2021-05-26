@@ -29,7 +29,8 @@ public class EmployerManager implements EmployerService {
     public Result add(Employer employer) {
         employerValidator = new EmployerValidator(employer, employerDao);
 
-
+        if(!employerValidator.isWebAndEmailDomainMatch())
+            return new ErrorResult(employer.getEmail() + " and " + employer.getWebAddress() + " are not matching!");
         if(employerValidator.isEmailUsedBefore())
             return new ErrorResult(employer.getEmail() + " used before.");
         if(!employerValidator.isEmailValidated())
