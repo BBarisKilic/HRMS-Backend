@@ -4,6 +4,7 @@ import com.bbkdevelopment.hrms.business.abstracts.EmployerService;
 import com.bbkdevelopment.hrms.core.utilities.results.*;
 import com.bbkdevelopment.hrms.core.utilities.validators.EmployerValidator;
 import com.bbkdevelopment.hrms.dataAccess.abstracts.EmployerDao;
+import com.bbkdevelopment.hrms.dataAccess.abstracts.UserDao;
 import com.bbkdevelopment.hrms.entities.concretes.Employer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,12 +12,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class EmployerManager implements EmployerService {
+public class EmployerManager extends UserManager implements EmployerService {
     private EmployerDao employerDao;
     private EmployerValidator employerValidator;
 
     @Autowired
-    public EmployerManager(EmployerDao employerDao) {
+    public EmployerManager(EmployerDao employerDao, UserDao userDao) {
+        super(userDao);
         this.employerDao = employerDao;
     }
 
@@ -27,7 +29,7 @@ public class EmployerManager implements EmployerService {
 
     @Override
     public Result add(Employer employer) {
-        employerValidator = new EmployerValidator(employer, employerDao);
+        employerValidator = new EmployerValidator(employer, employerDao, userDao);
 
         if(!employerValidator.isWebAndEmailDomainMatch())
             return new ErrorResult(employer.getEmail() + " and " + employer.getWebAddress() + " are not matching!");

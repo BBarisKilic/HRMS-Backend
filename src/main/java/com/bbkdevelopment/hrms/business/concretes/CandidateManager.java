@@ -4,6 +4,7 @@ import com.bbkdevelopment.hrms.business.abstracts.CandidateService;
 import com.bbkdevelopment.hrms.core.utilities.results.*;
 import com.bbkdevelopment.hrms.core.utilities.validators.CandidateValidator;
 import com.bbkdevelopment.hrms.dataAccess.abstracts.CandidateDao;
+import com.bbkdevelopment.hrms.dataAccess.abstracts.UserDao;
 import com.bbkdevelopment.hrms.entities.concretes.Candidate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,12 +12,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class CandidateManager implements CandidateService {
+public class CandidateManager extends UserManager implements CandidateService {
     private CandidateDao candidateDao;
     private CandidateValidator candidateValidator;
 
     @Autowired
-    public CandidateManager(CandidateDao candidateDao) {
+    public CandidateManager(CandidateDao candidateDao, UserDao userDao) {
+        super(userDao);
         this.candidateDao = candidateDao;
     }
 
@@ -27,7 +29,7 @@ public class CandidateManager implements CandidateService {
 
     @Override
     public Result add(Candidate candidate) {
-        candidateValidator = new CandidateValidator(candidate, candidateDao);
+        candidateValidator = new CandidateValidator(candidate, candidateDao, userDao);
 
         if(candidateValidator.isEmailUsedBefore())
             return new ErrorResult(candidate.getEmail() + " used before.");
