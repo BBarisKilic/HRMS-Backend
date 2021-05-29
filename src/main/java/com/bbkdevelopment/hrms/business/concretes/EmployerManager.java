@@ -28,7 +28,7 @@ public class EmployerManager extends UserManager implements EmployerService {
     }
 
     @Override
-    public Result add(Employer employer) {
+    public Result add(Employer employer, String secondPassword) {
         employerValidator = new EmployerValidator(employer, employerDao, userDao);
 
         if(!employerValidator.isWebAndEmailDomainMatch())

@@ -24,5 +24,4 @@ public class JobTitle {
     @NotEmpty
     @NotBlank(message = "Job title can not be empty!")
     private String jobTitle;
-
 }

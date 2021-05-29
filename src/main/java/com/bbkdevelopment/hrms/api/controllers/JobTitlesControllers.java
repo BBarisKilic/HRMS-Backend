@@ -4,7 +4,6 @@ import com.bbkdevelopment.hrms.business.abstracts.JobTitleService;
 import com.bbkdevelopment.hrms.core.utilities.results.DataResult;
 import com.bbkdevelopment.hrms.core.utilities.results.Result;
 import com.bbkdevelopment.hrms.entities.concretes.JobTitle;
-import com.bbkdevelopment.hrms.entities.concretes.RequestBodyEmployer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

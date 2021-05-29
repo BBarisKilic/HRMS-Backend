@@ -39,5 +39,4 @@ public class Candidate extends User {
 
     @Column(name = "birth_year")
     private int birthYear;
-
 }

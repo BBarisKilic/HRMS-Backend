@@ -4,7 +4,6 @@ import com.bbkdevelopment.hrms.business.abstracts.EmployerService;
 import com.bbkdevelopment.hrms.core.utilities.results.DataResult;
 import com.bbkdevelopment.hrms.core.utilities.results.Result;
 import com.bbkdevelopment.hrms.entities.concretes.Employer;
-import com.bbkdevelopment.hrms.entities.concretes.RequestBodyEmployer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,7 +25,7 @@ public class EmployersControllers {
     }
 
     @PostMapping("/add")
-    public Result add(@RequestBody RequestBodyEmployer requestBodyEmployer) {
-        return this.employerService.add(requestBodyEmployer);
+    public Result add(@RequestBody Employer employer, @RequestParam String secondPassword) {
+        return this.employerService.add(employer, secondPassword);
     }
 }

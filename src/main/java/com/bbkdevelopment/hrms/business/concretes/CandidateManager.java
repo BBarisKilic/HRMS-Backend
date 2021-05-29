@@ -28,7 +28,7 @@ public class CandidateManager extends UserManager implements CandidateService {
     }
 
     @Override
-    public Result add(Candidate candidate) {
+    public Result add(Candidate candidate, String secondPassword) {
         candidateValidator = new CandidateValidator(candidate, candidateDao, userDao);
 
         if(candidateValidator.isEmailUsedBefore())

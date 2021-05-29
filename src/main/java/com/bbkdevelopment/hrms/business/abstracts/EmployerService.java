@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface EmployerService {
     DataResult<List<Employer>> getAll();
-    Result add(Employer Employer);
+    Result add(Employer Employer, String secondPassword);
 }
