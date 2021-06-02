@@ -2,9 +2,9 @@ package com.bbkdevelopment.hrms.core.utilities.validators;
 
 import com.bbkdevelopment.hrms.core.adapters.concretes.EmailVerifierAdapter;
 import com.bbkdevelopment.hrms.core.adapters.concretes.EmployerVerifierAdapter;
-import com.bbkdevelopment.hrms.dataAccess.abstracts.EmployerDao;
-import com.bbkdevelopment.hrms.dataAccess.abstracts.UserDao;
-import com.bbkdevelopment.hrms.entities.concretes.Employer;
+import com.bbkdevelopment.hrms.core.dataAccess.EmployerDao;
+import com.bbkdevelopment.hrms.core.dataAccess.UserDao;
+import com.bbkdevelopment.hrms.core.entities.Employer;
 
 public class EmployerValidator extends UserValidator {
     private Employer employer;

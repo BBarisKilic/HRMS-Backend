@@ -1,7 +1,7 @@
 package com.bbkdevelopment.hrms.core.utilities.validators;
 
-import com.bbkdevelopment.hrms.dataAccess.abstracts.UserDao;
-import com.bbkdevelopment.hrms.entities.concretes.User;
+import com.bbkdevelopment.hrms.core.dataAccess.UserDao;
+import com.bbkdevelopment.hrms.core.entities.User;
 
 public class UserValidator {
     private User user;

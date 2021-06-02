@@ -3,9 +3,9 @@ package com.bbkdevelopment.hrms.business.concretes;
 import com.bbkdevelopment.hrms.business.abstracts.CandidateService;
 import com.bbkdevelopment.hrms.core.utilities.results.*;
 import com.bbkdevelopment.hrms.core.utilities.validators.CandidateValidator;
-import com.bbkdevelopment.hrms.dataAccess.abstracts.CandidateDao;
-import com.bbkdevelopment.hrms.dataAccess.abstracts.UserDao;
-import com.bbkdevelopment.hrms.entities.concretes.Candidate;
+import com.bbkdevelopment.hrms.core.dataAccess.CandidateDao;
+import com.bbkdevelopment.hrms.core.dataAccess.UserDao;
+import com.bbkdevelopment.hrms.core.entities.Candidate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

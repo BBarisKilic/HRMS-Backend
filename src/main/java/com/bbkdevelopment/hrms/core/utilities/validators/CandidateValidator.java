@@ -2,9 +2,9 @@ package com.bbkdevelopment.hrms.core.utilities.validators;
 
 import com.bbkdevelopment.hrms.core.adapters.concretes.EmailVerifierAdapter;
 import com.bbkdevelopment.hrms.core.adapters.concretes.MernisAdapter;
-import com.bbkdevelopment.hrms.dataAccess.abstracts.CandidateDao;
-import com.bbkdevelopment.hrms.dataAccess.abstracts.UserDao;
-import com.bbkdevelopment.hrms.entities.concretes.Candidate;
+import com.bbkdevelopment.hrms.core.dataAccess.CandidateDao;
+import com.bbkdevelopment.hrms.core.dataAccess.UserDao;
+import com.bbkdevelopment.hrms.core.entities.Candidate;
 
 public class CandidateValidator extends UserValidator{
     private Candidate candidate;

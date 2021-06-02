@@ -1,7 +1,7 @@
 package com.bbkdevelopment.hrms.business.concretes;
 
 import com.bbkdevelopment.hrms.business.abstracts.UserService;
-import com.bbkdevelopment.hrms.dataAccess.abstracts.UserDao;
+import com.bbkdevelopment.hrms.core.dataAccess.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

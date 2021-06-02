@@ -1,5 +1,6 @@
-package com.bbkdevelopment.hrms.entities.concretes;
+package com.bbkdevelopment.hrms.core.entities;
 
+import com.bbkdevelopment.hrms.core.entities.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
