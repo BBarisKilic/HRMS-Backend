@@ -1,6 +1,9 @@
 package com.bbkdevelopment.hrms.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -9,6 +12,8 @@ import javax.validation.constraints.NotEmpty;
 @Data
 @Entity
 @Table(name = "cities")
+@NoArgsConstructor
+@AllArgsConstructor
 public class City {
 
     @Id
