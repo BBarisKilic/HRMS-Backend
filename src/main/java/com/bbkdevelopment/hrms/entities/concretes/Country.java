@@ -26,7 +26,7 @@ public class Country {
     @Column(name = "country_name")
     @NotEmpty
     @NotBlank(message = "Country name can not be empty!")
-    private String country_name;
+    private String countryName;
 
     @OneToMany(mappedBy = "country")
     private List<City> cities;

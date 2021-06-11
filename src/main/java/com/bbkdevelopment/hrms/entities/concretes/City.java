@@ -24,7 +24,7 @@ public class City {
     @Column(name = "city_name")
     @NotEmpty
     @NotBlank(message = "City name can not be empty!")
-    private String city_name;
+    private String cityName;
 
     @ManyToOne
     @JoinColumn(name = "country_id")
