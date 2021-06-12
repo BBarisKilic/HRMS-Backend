@@ -6,6 +6,7 @@ import com.bbkdevelopment.hrms.core.utilities.results.SuccessDataResult;
 import com.bbkdevelopment.hrms.dataAccess.abstracts.JobAdvertisementDao;
 import com.bbkdevelopment.hrms.entities.concretes.JobAdvertisement;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,5 +28,11 @@ public class JobAdvertisementManager implements JobAdvertisementService {
     @Override
     public DataResult<List<JobAdvertisement>> getByIsActive(boolean isActive) {
         return new SuccessDataResult(jobAdvertisementDao.getByIsActive(isActive), "Active job advertisements successfully fetched.");
+    }
+
+    @Override
+    public DataResult<List<JobAdvertisement>> getSortByIsActive(boolean isActive) {
+        Sort sort = Sort.by(Sort.Direction.DESC, "postingDate");
+        return new SuccessDataResult(jobAdvertisementDao.getSortByIsActive(isActive, sort), "Sorted active job advertisements successfully fetched.");
     }
 }

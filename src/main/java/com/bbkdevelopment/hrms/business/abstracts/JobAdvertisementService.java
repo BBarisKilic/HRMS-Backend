@@ -8,4 +8,5 @@ import java.util.List;
 public interface JobAdvertisementService {
     DataResult<List<JobAdvertisement>> getAll();
     DataResult<List<JobAdvertisement>> getByIsActive(boolean isActive);
+    DataResult<List<JobAdvertisement>> getSortByIsActive(boolean isActive);
 }
