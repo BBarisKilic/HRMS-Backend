@@ -36,7 +36,7 @@ public class EmployerManager extends UserManager implements EmployerService {
         if(employerValidator.isEmailUsedBefore())
             return new ErrorResult(employer.getEmail() + " used before.");
         if(!employerValidator.isEmailValidated())
-            return new ErrorResult("Please validate your email: "+ employer.getEmail());
+            return new ErrorResult("Please validate your email: " + employer.getEmail());
         if(!employerValidator.isEmployerVerified())
             return new ErrorResult("Your registration need to be verified by the employee first.");
 

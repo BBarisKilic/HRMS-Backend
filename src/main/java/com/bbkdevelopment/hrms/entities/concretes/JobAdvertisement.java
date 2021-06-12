@@ -53,6 +53,11 @@ public class JobAdvertisement {
     @NotBlank(message = "Open positions field can not be empty!")
     private int numberOfOpenPositions;
 
+    @Column(name = "posting_date")
+    @NotEmpty
+    @NotBlank(message = "Posting date field can not be empty!")
+    private Date postingDate;
+
     @Column(name = "application_deadline")
     private Date applicationDeadline;
 
