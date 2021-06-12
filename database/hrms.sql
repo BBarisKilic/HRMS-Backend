@@ -108,6 +108,7 @@ CREATE TABLE public.job_advertisement(
 	min_salary INTEGER,
 	max_salary INTEGER,
 	number_of_open_positions INTEGER NOT NULL,
+	posting_date DATE NOT NULL,
 	application_deadline DATE NOT NULL,
 	is_active BOOLEAN NOT NULL,
 	CONSTRAINT pk_job_advertisement PRIMARY KEY(id),
