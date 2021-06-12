@@ -24,4 +24,9 @@ public class JobAdvertisementsControllers {
     private DataResult<List<JobAdvertisement>> getAll() {
         return this.jobAdvertisementService.getAll();
     }
+
+    @GetMapping("/get-active-job-advertisements")
+    private DataResult<List<JobAdvertisement>> getActiveJobAdvertisements() {
+        return this.jobAdvertisementService.getByIsActive(true);
+    }
 }

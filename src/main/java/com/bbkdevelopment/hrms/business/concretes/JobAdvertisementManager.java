@@ -23,4 +23,9 @@ public class JobAdvertisementManager implements JobAdvertisementService {
     public DataResult<List<JobAdvertisement>> getAll() {
         return new SuccessDataResult(jobAdvertisementDao.findAll(), "Job advertisements successfully fetched.");
     }
+
+    @Override
+    public DataResult<List<JobAdvertisement>> getByIsActive(boolean isActive) {
+        return new SuccessDataResult(jobAdvertisementDao.getByIsActive(isActive), "Active job advertisements successfully fetched.");
+    }
 }
