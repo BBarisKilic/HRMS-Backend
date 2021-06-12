@@ -12,14 +12,14 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/employers")
 public class EmployersControllers {
-    EmployerService employerService;
+    private EmployerService employerService;
 
     @Autowired
     public EmployersControllers(EmployerService employerService) {
         this.employerService = employerService;
     }
 
-    @GetMapping("get-all")
+    @GetMapping("/get-all")
     public DataResult<List<Employer>> getAll() {
         return this.employerService.getAll();
     }

@@ -20,7 +20,7 @@ public class CitiesControllers {
         this.cityService = cityService;
     }
 
-    @GetMapping("get-all")
+    @GetMapping("/get-all")
     public DataResult<List<City>> getAll() {
         return this.cityService.getAll();
     }

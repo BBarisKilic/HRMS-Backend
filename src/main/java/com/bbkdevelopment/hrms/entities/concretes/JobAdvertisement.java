@@ -1,6 +1,7 @@
 package com.bbkdevelopment.hrms.entities.concretes;
 
 import com.bbkdevelopment.hrms.core.entities.Employer;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -56,9 +57,11 @@ public class JobAdvertisement {
     @Column(name = "posting_date")
     @NotEmpty
     @NotBlank(message = "Posting date field can not be empty!")
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date postingDate;
 
     @Column(name = "application_deadline")
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date applicationDeadline;
 
     @Column(name = "is_active")
