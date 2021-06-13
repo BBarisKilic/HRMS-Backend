@@ -18,7 +18,7 @@ See database:
 ## 1. Tasks
 
 | **No** | **Status** | **Task** |
-| :-------------: | ------------- | :------------- |
+| :-------------: | :---------------: | :------------- |
 | 01 | :ballot_box_with_check: &nbsp; Completed | Create an appropriate database. |
 | 02 | :ballot_box_with_check: &nbsp; Completed | Create a project using Spring Boot. |
 | 03 | :ballot_box_with_check: &nbsp; Completed | Create layers based on N-Layered Design Pattern. |
