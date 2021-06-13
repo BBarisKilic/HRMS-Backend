@@ -27,11 +27,11 @@ public class JobAdvertisementsControllers {
 
     @GetMapping("/get-active-job-advertisements")
     private DataResult<List<JobAdvertisement>> getActiveJobAdvertisements() {
-        return this.jobAdvertisementService.getByIsActive(true);
+        return this.jobAdvertisementService.getActiveJobAdvertisements();
     }
 
-    @GetMapping("/get-sorted-active-job-advertisements")
-    private DataResult<List<JobAdvertisement>> getSortedActiveJobAdvertisements() {
-        return this.jobAdvertisementService.getSortByIsActive(true);
+    @GetMapping("/get-sorted-by-posting-date-active-job-advertisements")
+    private DataResult<List<JobAdvertisement>> getSortedByPostingDateActiveJobAdvertisements() {
+        return this.jobAdvertisementService.getSortedByPostingDateActiveJobAdvertisements();
     }
 }

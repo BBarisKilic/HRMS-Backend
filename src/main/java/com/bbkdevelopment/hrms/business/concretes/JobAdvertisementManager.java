@@ -26,13 +26,13 @@ public class JobAdvertisementManager implements JobAdvertisementService {
     }
 
     @Override
-    public DataResult<List<JobAdvertisement>> getByIsActive(boolean isActive) {
-        return new SuccessDataResult(jobAdvertisementDao.getByIsActive(isActive), "Active job advertisements successfully fetched.");
+    public DataResult<List<JobAdvertisement>> getActiveJobAdvertisements() {
+        return new SuccessDataResult(jobAdvertisementDao.getByIsActive(true), "Active job advertisements successfully fetched.");
     }
 
     @Override
-    public DataResult<List<JobAdvertisement>> getSortByIsActive(boolean isActive) {
+    public DataResult<List<JobAdvertisement>> getSortedByPostingDateActiveJobAdvertisements() {
         Sort sort = Sort.by(Sort.Direction.DESC, "postingDate");
-        return new SuccessDataResult(jobAdvertisementDao.getSortByIsActive(isActive, sort), "Sorted active job advertisements successfully fetched.");
+        return new SuccessDataResult(jobAdvertisementDao.getSortByIsActive(true, sort), "Sorted active job advertisements successfully fetched.");
     }
 }
