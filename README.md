@@ -15,17 +15,23 @@ See other parts of the HRMS:
 See database:
 - [HRMS-Database-PostgreSQL](database)
 
-## 1. Progress
+## 1. Tasks
 
 | **No** | **Status** | **Task** |
 | :-------------: | ------------- | :------------- |
-| 1 | :ballot_box_with_check: &nbsp; Completed | Create an appropriate database. |
-| 2 | :ballot_box_with_check: &nbsp; Completed | Create a project using Spring Boot. |
-| 3 | :ballot_box_with_check: &nbsp; Completed | Create layers based on N-Layered Design Pattern. |
-| 4 | :ballot_box_with_check: &nbsp; Completed | Create an API controller that can list the titles of the job positions on the system. |
-| 5 | :ballot_box_with_check: &nbsp; Completed | Add Swagger support to the system. |
-| 6 | :ballot_box_with_check: &nbsp; Completed | Create an API controller that can list all candidates on the system. |
-| 7 | :ballot_box_with_check: &nbsp; Completed | Create an API controller that can list all employers on the system. |
+| 01 | :ballot_box_with_check: &nbsp; Completed | Create an appropriate database. |
+| 02 | :ballot_box_with_check: &nbsp; Completed | Create a project using Spring Boot. |
+| 03 | :ballot_box_with_check: &nbsp; Completed | Create layers based on N-Layered Design Pattern. |
+| 04 | :ballot_box_with_check: &nbsp; Completed | Create an API controller that can list the titles of the job positions on the system. |
+| 05 | :ballot_box_with_check: &nbsp; Completed | Add Swagger support to the system. |
+| 06 | :ballot_box_with_check: &nbsp; Completed | Create an API controller that can list all candidates on the system. |
+| 07 | :ballot_box_with_check: &nbsp; Completed | Create an API controller that can list all employers on the system. |
+| 08 | :ballot_box_with_check: &nbsp; Completed | It should be possible to add new job advertisements to the system. |
+| 09 | :ballot_box_with_check: &nbsp; Completed | Job advertisement must contain job position, job description, location(city), min salary(optional), max salary(optional), number of open positions, application deadline. |
+| 10 | :ballot_box_with_check: &nbsp; Completed | Create an API controller that can list all job advertisements on the system. |
+| 11 | :ballot_box_with_check: &nbsp; Completed | Create an API controller that can list all active job advertisements on the system. |
+| 12 | :ballot_box_with_check: &nbsp; Completed | Create an API controller that can list all active job advertisements of the requested employer. |
+| 13 | :ballot_box_with_check: &nbsp; Completed | Employers should be able to deactivate their job advertisement. |
 
 ## 2. Swagger UI
 
