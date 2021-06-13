@@ -61,6 +61,8 @@ public class JobAdvertisement {
     private Date postingDate;
 
     @Column(name = "application_deadline")
+    @NotEmpty
+    @NotBlank(message = "Application deadline field can not be empty!")
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date applicationDeadline;
 
