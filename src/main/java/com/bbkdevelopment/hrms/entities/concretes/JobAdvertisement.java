@@ -11,6 +11,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -23,10 +24,14 @@ public class JobAdvertisement {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "employer_id")
+    /*@Column(name = "employer_id")
     @NotEmpty
     @NotBlank(message = "Employer field can not be empty!")
-    private int employerId;
+    private int employerId;*/
+
+    @ManyToOne()
+    @JoinColumn(name = "employer_id")
+    private Employer employer;
 
     @Column(name = "job_title_id")
     @NotEmpty

@@ -6,6 +6,7 @@ import com.bbkdevelopment.hrms.entities.concretes.JobAdvertisement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -25,13 +26,18 @@ public class JobAdvertisementsControllers {
         return this.jobAdvertisementService.getAll();
     }
 
-    @GetMapping("/get-active-job-advertisements")
-    private DataResult<List<JobAdvertisement>> getActiveJobAdvertisements() {
-        return this.jobAdvertisementService.getActiveJobAdvertisements();
+    @GetMapping("/get-all-active-job-advertisements")
+    private DataResult<List<JobAdvertisement>> getAllActiveJobAdvertisements() {
+        return this.jobAdvertisementService.getAllActiveJobAdvertisements();
     }
 
-    @GetMapping("/get-sorted-by-posting-date-active-job-advertisements")
-    private DataResult<List<JobAdvertisement>> getSortedByPostingDateActiveJobAdvertisements() {
-        return this.jobAdvertisementService.getSortedByPostingDateActiveJobAdvertisements();
+    @GetMapping("/get-all-active-job-advertisements-and-sort-by-posting-date")
+    private DataResult<List<JobAdvertisement>> getAllActiveJobAdvertisementsAndSortByPostingDate() {
+        return this.jobAdvertisementService.getAllActiveJobAdvertisementsAndSortByPostingDate();
+    }
+
+    @GetMapping("/get-all-active-job-advertisements-by-employer")
+    private DataResult<List<JobAdvertisement>> getAllActiveJobAdvertisementsByEmployer(@RequestParam int employerId) {
+        return this.jobAdvertisementService.getAllActiveJobAdvertisementsByEmployer(employerId);
     }
 }

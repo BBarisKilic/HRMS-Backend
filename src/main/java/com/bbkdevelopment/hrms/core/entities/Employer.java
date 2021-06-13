@@ -1,6 +1,8 @@
 package com.bbkdevelopment.hrms.core.entities;
 
 import com.bbkdevelopment.hrms.core.entities.User;
+import com.bbkdevelopment.hrms.entities.concretes.JobAdvertisement;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -9,6 +11,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+import java.util.List;
 
 @Data
 @Entity
@@ -16,6 +19,7 @@ import javax.validation.constraints.NotEmpty;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobAdvertisements"})
 public class Employer extends User {
 
     @Id
@@ -37,4 +41,7 @@ public class Employer extends User {
     @NotEmpty
     @NotBlank(message = "Phone number can not be empty!")
     private String phoneNumber;
+
+    @OneToMany(mappedBy = "employer")
+    private List<JobAdvertisement> jobAdvertisements;
 }

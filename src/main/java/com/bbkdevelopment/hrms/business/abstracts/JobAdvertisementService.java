@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface JobAdvertisementService {
     DataResult<List<JobAdvertisement>> getAll();
-    DataResult<List<JobAdvertisement>> getActiveJobAdvertisements();
-    DataResult<List<JobAdvertisement>> getSortedByPostingDateActiveJobAdvertisements();
+    DataResult<List<JobAdvertisement>> getAllActiveJobAdvertisements();
+    DataResult<List<JobAdvertisement>> getAllActiveJobAdvertisementsAndSortByPostingDate();
+    DataResult<List<JobAdvertisement>> getAllActiveJobAdvertisementsByEmployer(int employerId);
 }
