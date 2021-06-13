@@ -29,6 +29,7 @@ public class JobAdvertisement {
     @NotBlank(message = "Employer field can not be empty!")
     private int employerId;*/
 
+    @JsonIgnoreProperties({"id", "email", "password", "webAddress", "phoneNumber"})
     @ManyToOne()
     @JoinColumn(name = "employer_id")
     private Employer employer;
