@@ -35,4 +35,5 @@ See database:
 
 ## 2. Swagger UI
 
-Screenshot will be added soon...
+
+<p align="center"><img src="images/hrms.png" width="720"></p>
